@@ -17,8 +17,23 @@ public class Vehiculos {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.pack();
                 frame.setVisible(true);
+                ((JFrame) SwingUtilities.getWindowAncestor(Ingresar)).dispose();
 
 
+
+            }
+        });
+
+
+        buscar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new JFrame("Ingresar");
+                frame.setContentPane(new Buscar().panel1);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.pack();
+                frame.setVisible(true);
+                ((JFrame) SwingUtilities.getWindowAncestor(Ingresar)).dispose();
 
             }
         });

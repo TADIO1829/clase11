@@ -15,6 +15,7 @@ public class Ingresar {
     public JTextField textField4;
     public JButton ingresarButton;
     public JTextField textField5;
+    public JButton regresarButton;
 
 
     public Ingresar() {
@@ -23,10 +24,26 @@ public class Ingresar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 insertarVehiculo();
+            }
+        });
 
+
+        regresarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame=new JFrame();
+                ((JFrame) SwingUtilities.getWindowAncestor(regresarButton)).dispose();
+                frame.setContentPane(new Vehiculos().panel1);
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setSize(1000, 1000);
+                frame.setLocationRelativeTo(null);
+                frame.pack();
+                frame.setVisible(true);
             }
         });
     }
+
+
     public void insertarVehiculo() {
         String placa = prueba.getText();
         int cilindro= Integer.parseInt(textField2.getText());
